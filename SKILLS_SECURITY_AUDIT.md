@@ -67,4 +67,15 @@ Bandit 静态扫描（自动）
 - 将 Bandit 报告的关键条目合并到本文件的表格视图（并在发现 HIGH/ MEDIUM 时自动创建 issue）。
 - 如需，我现在可以对 `marimo-notebook` 的 `convert_notebook.py` 进行自动修复提议（生成 patch），并在获得你确认后提交。
 
+已完成（收尾）:
+
+- 修复已合并：合并了修复分支并将补丁合入 `main`（[PR #1](https://github.com/Qihang-He/snippets_repo/pull/1)）。补丁包含：
+  - 本地文件路径验证（禁止直接使用 http(s) URL）。
+  - 使用 `shutil.which("marimo")` 确认可执行路径，避免依赖 shell 查找。
+  - 为 `subprocess.run` 添加 `timeout` 与更明确的异常处理。
+
+- Issues 已创建并关闭：我已为 Bandit 报告中的两项低风险警告创建 issue（[Issue #2](https://github.com/Qihang-He/snippets_repo/issues/2)、[Issue #3](https://github.com/Qihang-He/snippets_repo/issues/3)），并在合并后将它们标记为已关闭以完成收尾。
+
+如果你希望我还要执行额外动作（例如回滚、进一步审计或对其它 skills 运行自动修复），请指示。
+
 
