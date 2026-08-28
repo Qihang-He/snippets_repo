@@ -43,4 +43,28 @@ Actions taken (2026-08-28 → 2026-08-29):
 - 已永久从仓库中删除 `.agents/skills_archives/jupyter-notebook-writing_20260828_223527`，变更已提交并推送。
 - 已更新 `INSTALLED_SKILLS.md` 以反映删除状态。
 
+Bandit 静态扫描（自动）
+-----------------------
+
+扫描时间: 2026-08-28
+
+扫描文件: `bandit-report.json`（仓库根目录）
+
+摘要:
+- 总计发现问题: **2** (全部为 **LOW** 严重性，发生在 `marimo-notebook` 的 `scripts/convert_notebook.py`)。
+
+详细结果:
+- `.agents/skills/marimo-notebook/scripts/convert_notebook.py`:
+  - B404 (LOW): 导入 `subprocess` — "Consider possible security implications associated with the subprocess module."  (见 `bandit-report.json`)
+  - B603 (LOW): `subprocess.run` 可能执行不受信输入 — "subprocess call - check for execution of untrusted input." (见 `bandit-report.json`)
+
+建议动作:
+1) 对 `marimo-notebook/scripts/convert_notebook.py` 做小幅修正：对传入的 `input_path`/`output_path` 做白名单/路径验证，或改用更受限的调用模式；并在调用外部命令前记录并审查参数。
+2) 将 `marimo-notebook` 的运行限定在隔离环境（container / VM）并避免以管理员权限运行。若该 skill 接收用户上传或不受信的文件，务必先进行消毒/校验。
+3) 我已将 `bandit-report.json` 添加到仓库根目录并在 CI 中保留上传步骤；如需我可自动将发现条目逐条创建为 GitHub Issue 并附上上下文代码片段。
+
+下一步（可自动执行）:
+- 将 Bandit 报告的关键条目合并到本文件的表格视图（并在发现 HIGH/ MEDIUM 时自动创建 issue）。
+- 如需，我现在可以对 `marimo-notebook` 的 `convert_notebook.py` 进行自动修复提议（生成 patch），并在获得你确认后提交。
+
 
