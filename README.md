@@ -42,6 +42,14 @@ git push -u origin main
 
 安全提示：在运行第三方 skills 或未审查的脚本前，请先查看 `SKILLS_SECURITY_AUDIT.md` 中的审计建议。
 
+Agent & 使用说明：
+- 任务指派模板和示例见：`AGENT_USAGE.md`
+- 协作与提交规范见：`CONTRIBUTING.md`
+- 自我评估与改进建议见：`SELF_REVIEW.md`
+
+示例 smoke tests：
+- CI 已添加工作流 `Examples Smoke Tests`（`.github/workflows/examples-smoke.yml`），在对 `snippets/examples/` 的推送或 PR 时运行示例脚本的 smoke checks。
+
 Included:
 - prompts/README.md (user templates)
 - snippets/research_templates.code-snippets
