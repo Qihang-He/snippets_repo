@@ -12,9 +12,10 @@ This file lists skills installed locally to help your research workflow.
 - `data-analysis-jupyter` (mindrally) — Jupyter data-analysis helpers
 - `data-analysis-jupyter` (mindrally) — Jupyter data-analysis helpers
 - `marimo-notebook` (pymc-labs) — notebook analytics helpers (Medium Risk flagged)
+ - `marimo-notebook` (pymc-labs) — notebook analytics helpers (Medium Risk flagged)
 
-Archived skills:
-- `jupyter-notebook-writing` (zc277584121) — archived to `.agents/skills_archives/jupyter-notebook-writing_20260828_223527` after security review (2026-08-28). Remove archive if you want it deleted permanently.
+Notes:
+- `jupyter-notebook-writing` was archived for review on 2026-08-28 and has since been permanently removed from this repository per user request.
 
 Security notes:
 - Skills run with agent permissions; review each skill repository before using.
