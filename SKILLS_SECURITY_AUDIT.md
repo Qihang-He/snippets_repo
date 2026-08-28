@@ -32,3 +32,11 @@
 3) 如需移除，删除 `.agents/skills/<skill>` 并更新 `INSTALLED_SKILLS.md`（我可代为执行并提交）。
 
 注：此为初步自动化审计，最终决定请基于人工代码审查。若你授权，我将继续深入审查 `jupyter-notebook-writing`。
+
+Actions taken (2026-08-28):
+
+- 已将 `jupyter-notebook-writing` 从 `.agents/skills/` 移动并归档到 `.agents/skills_archives/jupyter-notebook-writing_20260828_223527`，以隔离该 skill 并保留其源文件供后续人工审查。
+- 已更新 `INSTALLED_SKILLS.md`，将该 skill 标记为已归档并记录归档路径。
+
+如需永久删除归档，请回复“永久删除 jupyter-notebook-writing”，我将从仓库中移除该归档并提交变更。
+
