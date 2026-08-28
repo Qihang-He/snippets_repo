@@ -49,6 +49,8 @@ Agent & 使用说明：
 
 示例 smoke tests：
 - CI 已添加工作流 `Examples Smoke Tests`（`.github/workflows/examples-smoke.yml`），在对 `snippets/examples/` 的推送或 PR 时运行示例脚本的 smoke checks。
+- 已添加定时运行的工作流 `Examples Smoke Tests (Scheduled)`（`.github/workflows/examples-cron.yml`），每天运行一次以保证示例长期可执行。
+- 已添加 `Bandit Security Scan`（`.github/workflows/bandit-scan.yml`），对本地 `.agents/skills/` 进行静态安全检查并上传报告。
 
 Included:
 - prompts/README.md (user templates)
