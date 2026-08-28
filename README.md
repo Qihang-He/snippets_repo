@@ -25,8 +25,22 @@ git push -u origin main
 
 注意：如果远端已存在 `origin`，请先手动移除或使用脚本的 `-Force` 选项。
 
-如果你愿意，我可以在你提供远端 URL 和授权后为你执行推送操作。
-This repo stores VS Code prompts and snippets for quick reuse.
+ 
+ Note: This is a user-level repo for easy backup and sync.
+
+同步说明（将 prompts 同步到 VS Code 用户目录）:
+
+1. 在本仓库根目录运行同步脚本（Windows PowerShell）：
+
+```powershell
+.\sync_prompts.ps1
+```
+
+2. 脚本会在 `%%APPDATA%%\Code\User\prompts` 下创建一个时间戳备份（如 `prompts_backup_YYYYMMDD_HHMMSS`），然后复制 `prompts/` 下的文件到用户 prompts 目录。请在运行前确保 VS Code 未锁定目标文件。
+
+3. 若想恢复备份，请手动将对应备份目录的文件复制回 `%%APPDATA%%\Code\User\prompts`。
+
+安全提示：在运行第三方 skills 或未审查的脚本前，请先查看 `SKILLS_SECURITY_AUDIT.md` 中的审计建议。
 
 Included:
 - prompts/README.md (user templates)
